@@ -419,21 +419,16 @@ circle {
 }
 
 @media (max-width: 768px) {
-    /* 文字部分を下にずらす */
     .timeline-content .text {
-        margin-top: 15px; /* 写真との間隔を開ける */
+        margin-top: 15px; 
     }
-
-    /* 写真の順番を上に固定する場合 */
     .timeline-content {
-        flex-direction: column; /* 縦並び */
+        flex-direction: column; 
     }
-    
     .photo-row,
     .thumbs {
-        width: 100%; /* 幅を画面いっぱいに */
+        width: 100%; 
     }
-
     .photo-row img,
     .thumbs img {
         max-width: 100%;
