@@ -1,19 +1,24 @@
 body {
     padding: 10px 40px 10px 40px;
-    background-color: rgb(6, 79, 6);
+    background-color: rgb(7, 57, 7);
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "游ゴシック", "Noto Sans JP", sans-serif;
 }
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: rgb(74, 45, 30);
+    font-weight: 600;
+}
 
-/* */
+
 .container {
     width: 100%;
     background-color: pink;
     width: 100%;
     border: 6px solid pink;
     border-radius: 12px;
-    /* 角を丸く*/
 }
-
 header {
     color: pink;
     background-color: rgb(6, 79, 6);
@@ -22,15 +27,12 @@ header {
     position: relative;
     border-radius: 12px;
 }
-
 header h1 {
     margin: 0;
     font-size: 34px;
     letter-spacing: 2px;
     font-weight: 700;
 }
-
-/* <nav class="contents">*/
 nav.contents {
     background: pink;
     border-bottom: 3px solid white;
@@ -40,99 +42,80 @@ nav.contents {
     padding: 8px 12px;
     align-items: center;
     position: sticky;
-    /* ← これ！ */
     top: 0;
-    /* ← 上に来たら固定 */
     z-index: 999;
-    /* ← 前面に出す */
 }
-
 .contents a {
-    color: rgb(6, 79, 6);
+    color: rgb(74, 45, 30);
     font-weight: 700;
     font-size: 20px;
 }
-
-/* 各セクション共通 */
 main {
     padding: 12px 18px 32px;
 }
-
-.section-title {
-    color: rgb(6, 79, 6);
-    text-align: center;
-    font-weight: 700;
-    font-size: 18px;
-    margin: 10px 0;
-    letter-spacing: 1px;
-}
-
-
-
-
-
-
-
 
 
 /* スローガン */
 .slogan {
     position: relative;
     width: 100%;
-    height: 400px;
-    /* 好きな高さに調整 */
+    height: 500px;
     background-image: url('image/back01.jpg');
     background-size: cover;
-    /* 画像をセクションいっぱいに */
     background-position: center;
-    /* 中央に配置 */
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    /* 横中央 */
     align-items: center;
-    /* 縦中央 */
     text-align: center;
 }
-
 .slogan h1 {
     color: white;
-    font-size: 32px;
-    /* お好みで調整 */
+    font-size: 40px;
     font-weight: 700;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-    /* 背景によって文字が見やすくなる */
     padding: 0 20px;
-    /* スマホでもはみ出さないように */
 }
-
-
 
 
 /* ABOUT */
+@media (max-width:420px) {
+    .profile-photo {
+        width: 96px;
+        height: 96px;
+        min-width: 96px;
+    }
+
+    .circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .exp-thumb {
+        width: 72px;
+        height: 64px;
+    }
+}
 .about {
     display: flex;
-    gap: 20px;               /* 写真と文字の間隔 */
+    gap: 20px;               
     align-items: center;
-    justify-content: center; /* 全体を中央に寄せる */
-    flex-wrap: wrap;         /* 画面が狭いと縦並びにする */
+    justify-content: center; 
+    flex-wrap: wrap;         
 }
-
 .profile {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     flex-shrink: 0;
 }
-
 .profile img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
 }
-
 .info {
-    max-width: 700px;        /* 横幅制限 */
+    max-width: 700px;        
     flex: 1;
     border-radius: 14px;
     padding: 20px;
@@ -141,24 +124,21 @@ main {
     justify-content: center;
     gap: 10px;
     background-color: white;
-    box-sizing: border-box;   /* パディング込みで幅制御 */
+    box-sizing: border-box;  
 }
-
 .info .name {
-    color: rgb(4, 44, 4);
+    color: rgb(74, 45, 30);
     font-weight: 700;
     font-size: 25px;
-    text-align: center;       /* 名前も中央寄せ */
+    text-align: center;       
 }
-
 .info .selfintro {
-    color: black;
+    color: rgb(74, 45, 30);
+    font-weight: 600;
     font-size: 18px;
     line-height: 1.5;
-    text-align: justify;      /* 文字を左右揃えにして見やすく */
+    text-align: justify;     
 }
-
-/* スマホ用 */
 @media (max-width: 768px) {
     .about {
         flex-direction: column;
@@ -182,41 +162,25 @@ main {
     box-shadow: var(--shadow);
     margin-bottom: 10px;
 }
-
-
-
-
-
-
-/* アイコン全体の並び */
 .contact-icons {
     display: flex;
     gap: 32px;
-    /* 間隔も少し広く */
     justify-content: center;
     flex-wrap: wrap;
 }
-
-/* アイコン + ラベルセット */
 .icon-link {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
     gap: 10px;
-    /* 上下の間隔を広く */
     transition: transform 0.25s ease;
 }
-
-/* ホバーで少し浮く */
 .icon-link:hover {
     transform: translateY(-6px);
 }
-
-/* アイコン本体（大きめ） */
 .icon {
     width: 80px;
-    /* ← 60 から 80 にアップ */
     height: 80px;
     border-radius: 16px;
     background: #f7f7f7;
@@ -226,44 +190,25 @@ main {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: 0.3s ease;
 }
-
-/* ホバー時のかわいい変化 */
 .icon-link:hover .icon {
     background: #ffeef7;
     box-shadow: 0 8px 18px rgba(255, 140, 200, 0.28);
 }
-
-/* アイコン画像（少し大きく） */
 .icon img {
     width: 48px;
-    /* ← 36 → 48 */
     height: 48px;
     object-fit: contain;
 }
-
-/* ラベル（文字も大きく） */
 .contact-label {
     font-size: 14px;
-    /* ← 12 → 14 */
     color: #666;
     letter-spacing: 0.6px;
     font-weight: 500;
     transition: color 0.3s ease;
 }
-
-/* ホバーで文字色もかわいく */
 .icon-link:hover .contact-label {
     color: #ff73b8;
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -271,140 +216,78 @@ main {
 .skill {
     padding: 20px;
 }
-
-.section-title {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-/* 四つ横並び */
 .skills-container {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
 }
-
 @media (max-width:1024px) {
     .skills-container {
         grid-template-columns: repeat(2, 1fr);
-        /* 2列に */
     }
 }
-
-/* スマホ */
 @media (max-width:600px) {
     .skills-container {
         grid-template-columns: 1fr;
-        /* 1列に縦並び */
     }
 }
-
-/* 個別カード */
 .bg {
     background-color: white;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 4px 4px 10px rgb(37, 27, 1);
+    box-shadow: 4px 4px 10px rgb(74, 45, 30);
     text-align: center;
 }
-
 .bg h2 {
     font-size: 28px;
-    color: green;
+    color: rgb(11, 78, 11);
     margin-bottom: 10px;
 }
-
-/* 円グラフ */
 .circle-container {
     position: relative;
     width: 200px;
     height: 200px;
     margin: 0 auto 10px auto;
 }
-
 svg {
     transform: rotate(-90deg);
 }
-
 circle {
     fill: none;
     stroke-width: 25;
 }
-
 .circle00 {
     stroke: white;
 }
-
-.circle01 {
+.circle01, .circle02, .circle03, .circle04 {
     stroke: pink;
     stroke-dasharray: 565.5;
     stroke-dashoffset: 565.5;
-    animation: c1 2s linear forwards;
+    transition: stroke-dashoffset 2s linear;
 }
-
-@keyframes c1 {
-    to {
-        stroke-dashoffset: 190;
-    }
+.bg:hover .circle01 {
+    stroke-dashoffset: 190; 
 }
-
-.circle02 {
-    stroke: pink;
-    stroke-dasharray: 565.5;
-    stroke-dashoffset: 565.5;
-    animation: c2 2s linear forwards;
+.bg:hover .circle02 {
+    stroke-dashoffset: 280; 
 }
-
-@keyframes c2 {
-    to {
-        stroke-dashoffset: 280;
-    }
+.bg:hover .circle03 {
+    stroke-dashoffset: 190; 
 }
-
-.circle03 {
-    stroke: pink;
-    stroke-dasharray: 565.5;
-    stroke-dashoffset: 565.5;
-    animation: c3 2s linear forwards;
+.bg:hover .circle04 {
+    stroke-dashoffset: 270; 
 }
-
-@keyframes c3 {
-    to {
-        stroke-dashoffset: 190;
-    }
-}
-
-.circle04 {
-    stroke: pink;
-    stroke-dasharray: 565.5;
-    stroke-dashoffset: 565.5;
-    animation: c4 2s linear forwards;
-}
-
-@keyframes c4 {
-    to {
-        stroke-dashoffset: 270;
-    }
-}
-
-
-
 .text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 .text h2 {
     margin: 0;
     font-size: 28px;
     color: #624224;
 }
-
-/* 説明文 */
 .bg p {
     color: #88837b;
     font-size: 14px;
@@ -412,26 +295,6 @@ circle {
     line-height: 1.4;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== EXPERIENCE 全体 ===== */
 .experience {
     background: pink;
     border: 6px solid white;
@@ -440,36 +303,23 @@ circle {
 @media (max-width:768px) {
     .flex-row {
         flex-direction: column;
-        gap: 15px; /* 縦の間隔 */
+        gap: 15px; 
     }
-
-    /* 写真・サムネイルのサイズも調整 */
-    .photo-row img, .thumbs img {
+.photo-row img, .thumbs img {
         width: 100%;
-        max-width: 300px; /* 任意 */
+        max-width: 300px; 
         height: auto;
     }
-
-    /* 動画も縦幅に対応 */
     .video video {
         width: 100%;
         height: auto;
     }
 }
-
-
-
-
-
-
-
-/* タイムライン全体 */
 .timeline {
     position: relative;
     max-width: 1000px;
     margin: auto;
 }
-
 .timeline::before {
     content: "";
     position: absolute;
@@ -480,13 +330,11 @@ circle {
     background: rgb(63, 40, 7);
     opacity: 0.4;
 }
-
 .timeline-item {
     position: relative;
     margin-left: 60px;
     margin-bottom: 40px;
 }
-
 .timeline-item::before {
     content: "";
     position: absolute;
@@ -494,56 +342,63 @@ circle {
     top: 10px;
     width: 18px;
     height: 18px;
-    background: green;
+    background: rgb(13, 65, 13);
     border-radius: 50%;
     border: 4px solid white;
 }
-
 .timeline-date {
     font-weight: bold;
-    color: green;
+    color: rgb(13, 50, 13);
     margin-bottom: 10px;
 }
-
-/* タイムラインコンテンツ */
 .timeline-content {
     background-color: white;
     padding: 60px;
     border-radius: 18px;
     display: flex;
-    flex-wrap: nowrap;
-   
-    
+    flex-wrap: nowrap;    
 }
-
-/* テキスト部分 */
 .timeline-content .text {
     flex-direction: column;
     display: flex;
-    
+    color: rgb(74, 45, 30);
+    font-weight: 600;
     line-height: 1.6;
 }
-
-
-
-/* 写真・サムネイル */
+.cute-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #ebcfda; 
+    color: rgb(16, 107, 16); 
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+.cute-link:hover {
+    transform: translateY(-5px) scale(1.05); 
+    box-shadow: 0 8px 15px rgba(73, 11, 11, 0.2);
+}
+.cute-link:active {
+    transform: translateY(0) scale(0.95); 
+    box-shadow: 0 4px 8px rgba(94, 18, 18, 0.2);
+}
 .photo-row,
 .thumbs {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    flex-shrink: 0; /* 横幅固定 */
+    flex-shrink: 0; 
 }
-
 .photo-row img,
 .thumbs img {
-    width: 110px;
-    height: 85px;
+    width: 130px;
+    height: 110px;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.8s ease;
 }
-
 .photo-row img:hover,
 .thumbs img:hover {
     transform: scale(3);
@@ -552,82 +407,47 @@ circle {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
     background: rgba(255, 220, 240, 0.7);
 }
-
 .video-center {
     display: flex;
-    justify-content: center; /* 横方向の中央寄せ */
-    margin: 40px 0; /* 前後の余白 */
+    justify-content: center;
+    margin: 40px 0; 
 }
-
 .video-center video {
-    width: 80%;       /* 横幅を画面に合わせる（調整可） */
-    max-width: 600px; /* 最大600px */
+    width: 80%;     
+    max-width: 600px; 
     border-radius: 12px;
 }
 
+@media (max-width: 768px) {
+    /* 文字部分を下にずらす */
+    .timeline-content .text {
+        margin-top: 15px; /* 写真との間隔を開ける */
+    }
 
-/* レスポンシブ */
-@media(max-width:768px) {
-    .timeline-content,
-    .video-right .timeline-content {
-        flex-direction: column;
+    /* 写真の順番を上に固定する場合 */
+    .timeline-content {
+        flex-direction: column; /* 縦並び */
+    }
+    
+    .photo-row,
+    .thumbs {
+        width: 100%; /* 幅を画面いっぱいに */
     }
 
     .photo-row img,
-    .thumbs img,
-    .video-right .video {
-        width: 100%;
-        max-width: 300px;
-    }
-    
-    .photo-row img:hover,
-    .thumbs img:hover {
-        transform: scale(2.2);
+    .thumbs img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* フッター */
+/* footer */
 footer.site-footer {
     background: transparent;
     padding: 18px;
     text-align: center;
     color: #666;
     font-size: 13px;
-}
-
-/* レスポンシブ（必要なら） */
-@media (max-width:420px) {
-    .profile-photo {
-        width: 96px;
-        height: 96px;
-        min-width: 96px;
-    }
-
-    .circle {
-        width: 60px;
-        height: 60px;
-    }
-
-    .exp-thumb {
-        width: 72px;
-        height: 64px;
-    }
 }
