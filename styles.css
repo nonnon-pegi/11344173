@@ -1,0 +1,633 @@
+body {
+    padding: 10px 40px 10px 40px;
+    background-color: rgb(6, 79, 6);
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "游ゴシック", "Noto Sans JP", sans-serif;
+}
+
+/* */
+.container {
+    width: 100%;
+    background-color: pink;
+    width: 100%;
+    border: 6px solid pink;
+    border-radius: 12px;
+    /* 角を丸く*/
+}
+
+header {
+    color: pink;
+    background-color: rgb(6, 79, 6);
+    padding: 14px 18px;
+    text-align: center;
+    position: relative;
+    border-radius: 12px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+/* <nav class="contents">*/
+nav.contents {
+    background: pink;
+    border-bottom: 3px solid white;
+    display: flex;
+    gap: 8px;
+    justify-content: space-around;
+    padding: 8px 12px;
+    align-items: center;
+    position: sticky;
+    /* ← これ！ */
+    top: 0;
+    /* ← 上に来たら固定 */
+    z-index: 999;
+    /* ← 前面に出す */
+}
+
+.contents a {
+    color: rgb(6, 79, 6);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* 各セクション共通 */
+main {
+    padding: 12px 18px 32px;
+}
+
+.section-title {
+    color: rgb(6, 79, 6);
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+/* スローガン */
+.slogan {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    /* 好きな高さに調整 */
+    background-image: url('image/back01.jpg');
+    background-size: cover;
+    /* 画像をセクションいっぱいに */
+    background-position: center;
+    /* 中央に配置 */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    /* 横中央 */
+    align-items: center;
+    /* 縦中央 */
+    text-align: center;
+}
+
+.slogan h1 {
+    color: white;
+    font-size: 32px;
+    /* お好みで調整 */
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    /* 背景によって文字が見やすくなる */
+    padding: 0 20px;
+    /* スマホでもはみ出さないように */
+}
+
+
+
+
+/* ABOUT */
+.about {
+    display: flex;
+    gap: 20px;               /* 写真と文字の間隔 */
+    align-items: center;
+    justify-content: center; /* 全体を中央に寄せる */
+    flex-wrap: wrap;         /* 画面が狭いと縦並びにする */
+}
+
+.profile {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info {
+    max-width: 700px;        /* 横幅制限 */
+    flex: 1;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background-color: white;
+    box-sizing: border-box;   /* パディング込みで幅制御 */
+}
+
+.info .name {
+    color: rgb(4, 44, 4);
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;       /* 名前も中央寄せ */
+}
+
+.info .selfintro {
+    color: black;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;      /* 文字を左右揃えにして見やすく */
+}
+
+/* スマホ用 */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info {
+        max-width: 90%;       
+    }
+}
+
+
+
+/*Contact */
+.contact-box {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 0px 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+/* アイコン全体の並び */
+.contact-icons {
+    display: flex;
+    gap: 32px;
+    /* 間隔も少し広く */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* アイコン + ラベルセット */
+.icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    /* 上下の間隔を広く */
+    transition: transform 0.25s ease;
+}
+
+/* ホバーで少し浮く */
+.icon-link:hover {
+    transform: translateY(-6px);
+}
+
+/* アイコン本体（大きめ） */
+.icon {
+    width: 80px;
+    /* ← 60 から 80 にアップ */
+    height: 80px;
+    border-radius: 16px;
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+/* ホバー時のかわいい変化 */
+.icon-link:hover .icon {
+    background: #ffeef7;
+    box-shadow: 0 8px 18px rgba(255, 140, 200, 0.28);
+}
+
+/* アイコン画像（少し大きく） */
+.icon img {
+    width: 48px;
+    /* ← 36 → 48 */
+    height: 48px;
+    object-fit: contain;
+}
+
+/* ラベル（文字も大きく） */
+.contact-label {
+    font-size: 14px;
+    /* ← 12 → 14 */
+    color: #666;
+    letter-spacing: 0.6px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* ホバーで文字色もかわいく */
+.icon-link:hover .contact-label {
+    color: #ff73b8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* SKILLS */
+.skill {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* 四つ横並び */
+.skills-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width:1024px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2列に */
+    }
+}
+
+/* スマホ */
+@media (max-width:600px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+        /* 1列に縦並び */
+    }
+}
+
+/* 個別カード */
+.bg {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgb(37, 27, 1);
+    text-align: center;
+}
+
+.bg h2 {
+    font-size: 28px;
+    color: green;
+    margin-bottom: 10px;
+}
+
+/* 円グラフ */
+.circle-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 10px auto;
+}
+
+svg {
+    transform: rotate(-90deg);
+}
+
+circle {
+    fill: none;
+    stroke-width: 25;
+}
+
+.circle00 {
+    stroke: white;
+}
+
+.circle01 {
+    stroke: pink;
+    stroke-dasharray: 565.5;
+    stroke-dashoffset: 565.5;
+    animation: c1 2s linear forwards;
+}
+
+@keyframes c1 {
+    to {
+        stroke-dashoffset: 190;
+    }
+}
+
+.circle02 {
+    stroke: pink;
+    stroke-dasharray: 565.5;
+    stroke-dashoffset: 565.5;
+    animation: c2 2s linear forwards;
+}
+
+@keyframes c2 {
+    to {
+        stroke-dashoffset: 280;
+    }
+}
+
+.circle03 {
+    stroke: pink;
+    stroke-dasharray: 565.5;
+    stroke-dashoffset: 565.5;
+    animation: c3 2s linear forwards;
+}
+
+@keyframes c3 {
+    to {
+        stroke-dashoffset: 190;
+    }
+}
+
+.circle04 {
+    stroke: pink;
+    stroke-dasharray: 565.5;
+    stroke-dashoffset: 565.5;
+    animation: c4 2s linear forwards;
+}
+
+@keyframes c4 {
+    to {
+        stroke-dashoffset: 270;
+    }
+}
+
+
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #624224;
+}
+
+/* 説明文 */
+.bg p {
+    color: #88837b;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== EXPERIENCE 全体 ===== */
+.experience {
+    background: pink;
+    border: 6px solid white;
+    padding: 40px 20px;
+}
+@media (max-width:768px) {
+    .flex-row {
+        flex-direction: column;
+        gap: 15px; /* 縦の間隔 */
+    }
+
+    /* 写真・サムネイルのサイズも調整 */
+    .photo-row img, .thumbs img {
+        width: 100%;
+        max-width: 300px; /* 任意 */
+        height: auto;
+    }
+
+    /* 動画も縦幅に対応 */
+    .video video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+
+
+
+
+/* タイムライン全体 */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: rgb(63, 40, 7);
+    opacity: 0.4;
+}
+
+.timeline-item {
+    position: relative;
+    margin-left: 60px;
+    margin-bottom: 40px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    background: green;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: green;
+    margin-bottom: 10px;
+}
+
+/* タイムラインコンテンツ */
+.timeline-content {
+    background-color: white;
+    padding: 60px;
+    border-radius: 18px;
+    display: flex;
+    flex-wrap: nowrap;
+   
+    
+}
+
+/* テキスト部分 */
+.timeline-content .text {
+    flex-direction: column;
+    display: flex;
+    
+    line-height: 1.6;
+}
+
+
+
+/* 写真・サムネイル */
+.photo-row,
+.thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0; /* 横幅固定 */
+}
+
+.photo-row img,
+.thumbs img {
+    width: 110px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.8s ease;
+}
+
+.photo-row img:hover,
+.thumbs img:hover {
+    transform: scale(3);
+    z-index: 200;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 220, 240, 0.7);
+}
+
+.video-center {
+    display: flex;
+    justify-content: center; /* 横方向の中央寄せ */
+    margin: 40px 0; /* 前後の余白 */
+}
+
+.video-center video {
+    width: 80%;       /* 横幅を画面に合わせる（調整可） */
+    max-width: 600px; /* 最大600px */
+    border-radius: 12px;
+}
+
+
+/* レスポンシブ */
+@media(max-width:768px) {
+    .timeline-content,
+    .video-right .timeline-content {
+        flex-direction: column;
+    }
+
+    .photo-row img,
+    .thumbs img,
+    .video-right .video {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .photo-row img:hover,
+    .thumbs img:hover {
+        transform: scale(2.2);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* フッター */
+footer.site-footer {
+    background: transparent;
+    padding: 18px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+}
+
+/* レスポンシブ（必要なら） */
+@media (max-width:420px) {
+    .profile-photo {
+        width: 96px;
+        height: 96px;
+        min-width: 96px;
+    }
+
+    .circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .exp-thumb {
+        width: 72px;
+        height: 64px;
+    }
+}
